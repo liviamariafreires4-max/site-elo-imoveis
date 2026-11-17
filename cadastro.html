@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Criar cadastro | Elo Imóveis</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/componentes.css" />
+    <link rel="stylesheet" href="css/paginas.css" />
+
+    <!-- A ordem importa: cada arquivo usa os anteriores -->
+    <script defer src="js/icones.js"></script>
+    <script defer src="js/instituicao.js"></script>
+    <script defer src="js/dados-exemplo.js"></script>
+    <script defer src="js/dados.js"></script>
+    <script defer src="js/auth.js"></script>
+    <script defer src="js/ui.js"></script>
+    <script defer src="js/validacao.js"></script>
+    <script defer src="js/paginas/cadastro.js"></script>
+  </head>
+  <body>
+    <div id="topo"></div>
+
+    <main id="conteudo" tabindex="-1">
+      <div class="container pagina auth">
+        <section>
+          <h1 class="t-h1">Criar cadastro de cliente</h1>
+          <p class="t-corpo" style="margin-top: 12px">Com o cadastro você salva imóveis e encontra todos em Meus favoritos.</p>
+
+          <form id="form-cadastro" novalidate>
+            <div class="campo">
+              <label class="rotulo" for="nome">Nome completo</label>
+              <input class="entrada" id="nome" name="nome" autocomplete="name" placeholder="Ex.: Maria da Silva" data-mascara="nome" data-validar="nome" maxlength="80" />
+            </div>
+            <div class="campo">
+              <label class="rotulo" for="email">E-mail</label>
+              <input class="entrada" id="email" name="email" type="email" autocomplete="email" data-mascara="email" data-validar="email" maxlength="120" placeholder="nome@exemplo.com" />
+            </div>
+            <div class="campo">
+              <label class="rotulo" for="telefone">Telefone com DDD <span class="opcional">(opcional)</span></label>
+              <input class="entrada" id="telefone" name="telefone" type="tel" inputmode="tel" autocomplete="tel" data-mascara="telefone" data-validar="telefone" maxlength="15" placeholder="(18) 99999-0000" />
+            </div>
+            <div class="campo">
+              <label class="rotulo" for="senha">Senha</label>
+              <input class="entrada" id="senha" name="senha" type="password" autocomplete="new-password" aria-describedby="senha-ajuda" data-ajuda="senha-ajuda" />
+              <p class="ajuda" id="senha-ajuda">Pelo menos 8 caracteres, com letras e números.</p>
+            </div>
+            <p class="t-pequeno aviso-privacidade">Ao continuar, você concorda com a <a class="link" href="privacidade.html">Política de Privacidade</a> da Elo Imóveis.</p>
+            <button type="submit" class="botao botao--primario botao--largo">Criar cadastro</button>
+          </form>
+
+          <p class="t-corpo" style="margin-top: 24px">Já tem conta? <a class="link" href="entrar.html">Entrar na conta</a></p>
+        </section>
+
+        <aside class="caixa-dev">
+          <h2 class="t-h4">Cadastro simulado</h2>
+          <p class="t-pequeno" style="margin-top: 8px">
+            Neste esboço a conta fica guardada só neste navegador e a senha não é armazenada. Não use uma senha verdadeira.
+          </p>
+        </aside>
+      </div>
+    </main>
+
+    <div id="rodape"></div>
+  </body>
+</html>

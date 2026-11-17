@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Notícias e dicas | Elo Imóveis</title>
+    <meta name="description" content="Matérias da Elo Imóveis sobre compra, venda, locação e financiamento de imóveis em Presidente Prudente." />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/componentes.css" />
+    <link rel="stylesheet" href="css/paginas.css" />
+
+    <!-- A ordem importa: cada arquivo usa os anteriores -->
+    <script defer src="js/icones.js"></script>
+    <script defer src="js/instituicao.js"></script>
+    <script defer src="js/dados-exemplo.js"></script>
+    <script defer src="js/dados.js"></script>
+    <script defer src="js/auth.js"></script>
+    <script defer src="js/ui.js"></script>
+    <script defer src="js/validacao.js"></script>
+    <script defer src="js/paginas/blog.js"></script>
+  </head>
+  <body>
+    <div id="topo"></div>
+
+    <main id="conteudo" tabindex="-1">
+      <div class="container pagina">
+        <h1 class="t-h1 entrada-hero">Notícias e dicas</h1>
+        <p class="t-lead" style="margin-top: 16px; max-width: 60ch">
+          Textos da equipe da Elo para quem vai comprar, vender ou alugar: documentos, custos, financiamento e o dia a dia do mercado em Presidente Prudente.
+        </p>
+        <p class="t-pequeno com-selo" style="margin-top: 16px">Matérias de exemplo, escritas para o esboço <span class="a-validar">A VALIDAR</span></p>
+
+        <!-- Filtro por categoria: os botões são montados em js/paginas/blog.js -->
+        <div class="filtro-blog" role="group" aria-label="Filtrar por categoria" id="categorias"></div>
+
+        <p class="sr-only" aria-live="polite" id="resumo-blog"></p>
+        <h2 class="sr-only">Matérias</h2>
+        <div id="materias" style="margin-top: 32px"></div>
+      </div>
+    </main>
+
+    <div id="rodape"></div>
+  </body>
+</html>

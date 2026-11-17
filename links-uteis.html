@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Links úteis | Elo Imóveis</title>
+    <meta name="description" content="Sites úteis para quem compra, vende ou aluga imóvel em Presidente Prudente: prefeitura, cartório, financiamento e mais." />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/componentes.css" />
+    <link rel="stylesheet" href="css/paginas.css" />
+
+    <!-- A ordem importa: cada arquivo usa os anteriores -->
+    <script defer src="js/icones.js"></script>
+    <script defer src="js/instituicao.js"></script>
+    <script defer src="js/dados-exemplo.js"></script>
+    <script defer src="js/dados.js"></script>
+    <script defer src="js/auth.js"></script>
+    <script defer src="js/ui.js"></script>
+    <script defer src="js/validacao.js"></script>
+  </head>
+  <body>
+    <div id="topo"></div>
+
+    <main id="conteudo" tabindex="-1">
+      <div class="container pagina">
+        <h1 class="t-h1 entrada-hero">Links úteis</h1>
+        <p class="t-lead" style="margin-top: 16px; max-width: 60ch">
+          Os sites que mais usamos no dia a dia para consultar documentos, impostos e financiamento. Todos abrem em uma nova aba.
+        </p>
+        <p class="t-pequeno com-selo" style="margin-top: 16px">Lista inicial, a imobiliária deve conferir <span class="a-validar">A VALIDAR</span></p>
+
+        <!-- Para acrescentar um link, copie um <li> inteiro e troque o endereço e os textos. -->
+        <section aria-labelledby="g-impostos" class="grupo-links">
+          <h2 class="t-h3" id="g-impostos">Prefeitura e impostos</h2>
+          <ul class="lista-links">
+            <li>
+              <a class="link-util" href="https://www.presidenteprudente.sp.gov.br" target="_blank" rel="noopener noreferrer">
+                <span class="t-card">Prefeitura de Presidente Prudente <span data-icone="link-externo" data-tamanho="16"></span></span>
+                <span class="t-pequeno">Segunda via e certidão de IPTU, guia de ITBI e alvarás.</span>
+              </a>
+            </li>
+            <li>
+              <a class="link-util" href="https://www.gov.br/receitafederal" target="_blank" rel="noopener noreferrer">
+                <span class="t-card">Receita Federal <span data-icone="link-externo" data-tamanho="16"></span></span>
+                <span class="t-pequeno">Situação do CPF e declaração de bens no Imposto de Renda.</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="g-documentos" class="grupo-links">
+          <h2 class="t-h3" id="g-documentos">Documentos do imóvel</h2>
+          <ul class="lista-links">
+            <li>
+              <a class="link-util" href="https://registradores.onr.org.br" target="_blank" rel="noopener noreferrer">
+                <span class="t-card">Registro de Imóveis Eletrônico (ONR) <span data-icone="link-externo" data-tamanho="16"></span></span>
+                <span class="t-pequeno">Pedir a matrícula atualizada e certidões do imóvel pela internet.</span>
+              </a>
+            </li>
+            <li>
+              <a class="link-util" href="https://www.crecisp.gov.br" target="_blank" rel="noopener noreferrer">
+                <span class="t-card">CRECI-SP <span data-icone="link-externo" data-tamanho="16"></span></span>
+                <span class="t-pequeno">Confirmar se o corretor ou a imobiliária têm registro ativo.</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="g-financiamento" class="grupo-links">
+          <h2 class="t-h3" id="g-financiamento">Financiamento e contratos</h2>
+          <ul class="lista-links">
+            <li>
+              <a class="link-util" href="https://www.caixa.gov.br/voce/habitacao" target="_blank" rel="noopener noreferrer">
+                <span class="t-card">Caixa: habitação <span data-icone="link-externo" data-tamanho="16"></span></span>
+                <span class="t-pequeno">Simular financiamento e consultar as regras do Minha Casa Minha Vida.</span>
+              </a>
+            </li>
+            <li>
+              <a class="link-util" href="https://www3.bcb.gov.br/CALCIDADAO" target="_blank" rel="noopener noreferrer">
+                <span class="t-card">Calculadora do Cidadão (Banco Central) <span data-icone="link-externo" data-tamanho="16"></span></span>
+                <span class="t-pequeno">Calcular o reajuste do aluguel pelo IGP-M ou pelo IPCA.</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="g-servicos" class="grupo-links">
+          <h2 class="t-h3" id="g-servicos">Água e energia</h2>
+          <ul class="lista-links">
+            <li>
+              <a class="link-util" href="https://www.sabesp.com.br" target="_blank" rel="noopener noreferrer">
+                <span class="t-card">Sabesp <span data-icone="link-externo" data-tamanho="16"></span></span>
+                <span class="t-pequeno">Ligação, troca de titularidade e segunda via da conta de água.</span>
+              </a>
+            </li>
+            <li>
+              <a class="link-util" href="https://www.energisa.com.br" target="_blank" rel="noopener noreferrer">
+                <span class="t-card">Energisa <span data-icone="link-externo" data-tamanho="16"></span></span>
+                <span class="t-pequeno">Ligação, troca de titularidade e segunda via da conta de luz.</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <div id="rodape"></div>
+  </body>
+</html>

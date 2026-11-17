@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meus favoritos | Elo Imóveis</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/componentes.css" />
+    <link rel="stylesheet" href="css/paginas.css" />
+
+    <!-- A ordem importa: cada arquivo usa os anteriores -->
+    <script defer src="js/icones.js"></script>
+    <script defer src="js/instituicao.js"></script>
+    <script defer src="js/dados-exemplo.js"></script>
+    <script defer src="js/dados.js"></script>
+    <script defer src="js/auth.js"></script>
+    <script defer src="js/ui.js"></script>
+    <script defer src="js/validacao.js"></script>
+    <script defer src="js/paginas/favoritos.js"></script>
+  </head>
+  <body>
+    <div id="topo"></div>
+
+    <main id="conteudo" tabindex="-1">
+      <div class="container pagina">
+        <h1 class="t-h1">Meus favoritos</h1>
+        <nav class="abas-conta" aria-label="Minha conta">
+          <a href="minha-conta.html">Meus dados</a>
+          <a href="favoritos.html" aria-current="page">Meus favoritos</a>
+        </nav>
+        <p class="t-corpo" style="margin-top: 8px" id="resumo" aria-live="polite">Os imóveis que você salvou.</p>
+        <div id="favoritos" style="margin-top: 32px"></div>
+      </div>
+    </main>
+
+    <div id="rodape"></div>
+  </body>
+</html>

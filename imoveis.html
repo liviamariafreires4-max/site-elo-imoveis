@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Imóveis à venda e para alugar | Elo Imóveis</title>
+    <meta name="description" content="Busque imóveis em Presidente Prudente por finalidade, tipo, bairro, preço ou código." />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/componentes.css" />
+    <link rel="stylesheet" href="css/paginas.css" />
+
+    <!-- A ordem importa: cada arquivo usa os anteriores -->
+    <script defer src="js/icones.js"></script>
+    <script defer src="js/instituicao.js"></script>
+    <script defer src="js/dados-exemplo.js"></script>
+    <script defer src="js/dados.js"></script>
+    <script defer src="js/auth.js"></script>
+    <script defer src="js/ui.js"></script>
+    <script defer src="js/validacao.js"></script>
+    <script defer src="js/paginas/busca.js"></script>
+  </head>
+  <body>
+    <div id="topo"></div>
+
+    <main id="conteudo" tabindex="-1">
+      <div class="container pagina">
+        <h1 class="t-h1" id="titulo">Imóveis</h1>
+        <p class="t-corpo" style="margin-top: 8px">Presidente Prudente e região.</p>
+
+        <div class="busca">
+          <!-- Filtros: coluna fixa no desktop. No celular, o mesmo formulário vai para a folha abaixo. -->
+          <aside class="busca__filtros" aria-label="Filtros">
+            <div id="filtros-desktop">
+              <form class="filtros" id="filtros">
+                <div class="filtros-cabeca">
+                  <h2 class="t-h4">Filtros</h2>
+                  <button type="button" class="link t-pequeno" data-limpar="topo" hidden>Limpar filtros</button>
+                </div>
+
+                <fieldset>
+                  <legend class="rotulo">Finalidade</legend>
+                  <div class="segmentos">
+                    <label><input type="radio" name="finalidade" value="" />Todas</label>
+                    <label><input type="radio" name="finalidade" value="venda" />Venda</label>
+                    <label><input type="radio" name="finalidade" value="aluguel" />Aluguel</label>
+                  </div>
+                </fieldset>
+
+                <div class="campo">
+                  <label class="rotulo" for="f-tipo">Tipo de imóvel</label>
+                  <select class="entrada" id="f-tipo" name="tipo"><option value="">Todos os tipos</option></select>
+                </div>
+                <div class="campo">
+                  <label class="rotulo" for="f-cidade">Cidade</label>
+                  <select class="entrada" id="f-cidade" name="cidade"><option value="">Todas as cidades</option></select>
+                </div>
+                <div class="campo">
+                  <label class="rotulo" for="f-bairro">Bairro</label>
+                  <select class="entrada" id="f-bairro" name="bairro"><option value="">Todos os bairros</option></select>
+                </div>
+                <div class="form-grade">
+                  <div>
+                    <label class="rotulo" for="f-preco-min">Preço mínimo</label>
+                    <select class="entrada" id="f-preco-min" name="precoMin"><option value="">Qualquer</option></select>
+                  </div>
+                  <div>
+                    <label class="rotulo" for="f-preco-max">Preço máximo</label>
+                    <select class="entrada" id="f-preco-max" name="precoMax"><option value="">Qualquer</option></select>
+                  </div>
+                  <div>
+                    <label class="rotulo" for="f-dorms">Dormitórios</label>
+                    <select class="entrada" id="f-dorms" name="dorms">
+                      <option value="">Qualquer</option><option value="1">1 ou mais</option><option value="2">2 ou mais</option><option value="3">3 ou mais</option><option value="4">4 ou mais</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="rotulo" for="f-vagas">Vagas</label>
+                    <select class="entrada" id="f-vagas" name="vagas">
+                      <option value="">Qualquer</option><option value="1">1 ou mais</option><option value="2">2 ou mais</option><option value="3">3 ou mais</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="campo">
+                  <label class="rotulo" for="f-codigo">Código do imóvel</label>
+                  <input class="entrada" id="f-codigo" name="codigo" type="text" autocomplete="off" placeholder="Ex.: ELO-1007" aria-describedby="f-codigo-ajuda" data-ajuda="f-codigo-ajuda" />
+                  <p class="ajuda" id="f-codigo-ajuda">Com um código, os outros filtros são ignorados.</p>
+                </div>
+              </form>
+            </div>
+          </aside>
+
+          <section aria-label="Resultados" style="min-width: 0">
+            <div class="busca__barra">
+              <p class="t-corpo cor-tinta" style="font-weight: 500" id="contador" aria-live="polite">Buscando imóveis…</p>
+              <div class="busca__ordem">
+                <button type="button" class="botao botao--neutro botao-filtros" id="abrir-filtros" data-icone="filtros"><span id="rotulo-filtros">Filtros</span></button>
+                <div class="campo">
+                  <label class="rotulo" for="ordem">Ordenar por</label>
+                  <select class="entrada" id="ordem">
+                    <option value="recentes">Mais recentes</option>
+                    <option value="menor-preco">Menor preço</option>
+                    <option value="maior-preco">Maior preço</option>
+                    <option value="maior-area">Maior área</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div id="resultados"></div>
+          </section>
+        </div>
+      </div>
+
+      <!-- Folha de filtros do celular -->
+      <dialog class="folha" id="folha-filtros" aria-labelledby="folha-titulo">
+        <div class="folha__topo">
+          <h2 class="t-h4" id="folha-titulo">Filtros</h2>
+          <button type="button" class="botao botao--neutro botao--pequeno botao--icone" id="fechar-filtros"><span data-icone="fechar" data-tamanho="20"></span><span class="sr-only">Fechar filtros</span></button>
+        </div>
+        <div class="folha__conteudo" id="filtros-folha"></div>
+        <div class="folha__base">
+          <button type="button" class="botao botao--neutro" data-limpar="folha">Limpar</button>
+          <button type="button" class="botao botao--primario" id="ver-resultados">Ver imóveis</button>
+        </div>
+      </dialog>
+    </main>
+
+    <div id="rodape"></div>
+  </body>
+</html>

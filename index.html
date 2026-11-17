@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Elo Imóveis | Imóveis em Presidente Prudente</title>
+    <meta name="description" content="Casas, apartamentos e terrenos à venda e para alugar em Presidente Prudente e região." />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+
+    <!-- Fontes do manual (seção 04): Poppins nos títulos, Inter na leitura -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/componentes.css" />
+    <link rel="stylesheet" href="css/paginas.css" />
+
+    <!-- A ordem importa: cada arquivo usa os anteriores -->
+    <script defer src="js/icones.js"></script>
+    <script defer src="js/instituicao.js"></script>
+    <script defer src="js/dados-exemplo.js"></script>
+    <script defer src="js/dados.js"></script>
+    <script defer src="js/auth.js"></script>
+    <script defer src="js/ui.js"></script>
+    <script defer src="js/validacao.js"></script>
+    <script defer src="js/paginas/home.js"></script>
+  </head>
+  <body>
+    <div id="topo"></div>
+
+    <main id="conteudo" tabindex="-1">
+      <!-- 02 · Hero: foto + overlay escuro -->
+      <section class="hero escuro" aria-labelledby="hero-titulo">
+        <!-- Foto provisória (Unsplash): trocar por uma foto real -->
+        <img class="hero__foto" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&amp;q=70&amp;auto=format&amp;fit=crop" alt="Casa contemporânea com jardim ao entardecer" fetchpriority="high" />
+        <div class="container hero__texto entrada-hero">
+          <h1 class="t-hero" id="hero-titulo">Encontre um imóvel que combine com você.</h1>
+          <p class="t-lead">Casas, apartamentos e terrenos em Presidente Prudente e região.</p>
+          <!-- Nota da Elo no Google: montada por js/paginas/home.js a partir de Elo.GOOGLE -->
+          <a class="selo-google" id="selo-google" target="_blank" rel="noopener noreferrer" hidden></a>
+        </div>
+      </section>
+
+      <!-- 03 · Busca: prioridade máxima da home -->
+      <section class="container busca-home" aria-label="Buscar imóveis">
+        <div class="abas" role="tablist" aria-label="Tipo de busca">
+          <button type="button" class="aba" role="tab" id="aba-venda" aria-selected="true" aria-controls="painel-busca" data-modo="venda">Venda</button>
+          <button type="button" class="aba" role="tab" id="aba-aluguel" aria-selected="false" aria-controls="painel-busca" tabindex="-1" data-modo="aluguel">Aluguel</button>
+          <button type="button" class="aba" role="tab" id="aba-codigo" aria-selected="false" aria-controls="painel-busca" tabindex="-1" data-modo="codigo">Código</button>
+        </div>
+
+        <div class="painel-busca" role="tabpanel" id="painel-busca" aria-labelledby="aba-venda">
+          <!-- Venda e Aluguel: formulário GET comum para imoveis.html -->
+          <form class="form-busca" id="form-filtros" action="imoveis.html" method="get">
+            <input type="hidden" name="finalidade" id="busca-finalidade" value="venda" />
+            <div>
+              <label class="rotulo" for="busca-tipo">Tipo de imóvel</label>
+              <select class="entrada" id="busca-tipo" name="tipo">
+                <option value="">Todos os tipos</option>
+              </select>
+            </div>
+            <div>
+              <label class="rotulo" for="busca-cidade">Cidade</label>
+              <select class="entrada" id="busca-cidade" name="cidade">
+                <option value="">Todas as cidades</option>
+              </select>
+            </div>
+            <div>
+              <label class="rotulo" for="busca-bairro">Bairro</label>
+              <select class="entrada" id="busca-bairro" name="bairro">
+                <option value="">Todos os bairros</option>
+              </select>
+            </div>
+            <div>
+              <label class="rotulo" for="busca-preco" id="rotulo-preco">Preço até</label>
+              <select class="entrada" id="busca-preco" name="precoMax">
+                <option value="">Sem limite</option>
+              </select>
+            </div>
+            <div>
+              <label class="rotulo" for="busca-dorms">Dormitórios</label>
+              <select class="entrada" id="busca-dorms" name="dorms">
+                <option value="">Qualquer</option>
+                <option value="1">1 ou mais</option>
+                <option value="2">2 ou mais</option>
+                <option value="3">3 ou mais</option>
+                <option value="4">4 ou mais</option>
+              </select>
+            </div>
+            <button type="submit" class="botao botao--primario" data-icone="busca">Buscar imóveis</button>
+          </form>
+
+          <!-- Código -->
+          <form class="form-busca form-codigo" id="form-codigo" action="imoveis.html" method="get" hidden>
+            <div>
+              <label class="rotulo" for="busca-codigo">Código do imóvel</label>
+              <input class="entrada" id="busca-codigo" name="codigo" type="text" required autocomplete="off" placeholder="Ex.: ELO-1007" />
+            </div>
+            <button type="submit" class="botao botao--primario" data-icone="busca">Buscar pelo código</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- 04 · Atalhos -->
+      <section class="container" style="padding-block: 48px 0" aria-label="Atalhos">
+        <ul class="atalhos" id="atalhos"></ul>
+      </section>
+
+      <!-- 05 · Apresentação curta -->
+      <section class="fundo-suave" style="margin-top: 64px" aria-labelledby="sobre-titulo">
+        <div class="container secao duas-colunas">
+          <div>
+            <h2 class="t-h2" id="sobre-titulo">Uma imobiliária de Presidente Prudente, do primeiro contato às chaves.</h2>
+            <p class="t-lead" style="margin-top: 24px; max-width: 48ch">
+              A Elo Imóveis nasceu em 2023 e atende quem quer comprar, vender, alugar ou avaliar um imóvel na cidade e na região.
+            </p>
+            <a class="botao botao--secundario" style="margin-top: 32px" href="sobre.html">Conheça a Elo Imóveis</a>
+          </div>
+          <dl class="lista-divisoria">
+            <div>
+              <dt class="t-h4">Compra e venda</dt>
+              <dd class="t-corpo">Imóveis residenciais, comerciais e rurais, com visita acompanhada por um corretor.</dd>
+            </div>
+            <div>
+              <dt class="t-h4">Locação</dt>
+              <dd class="t-corpo">Casas, apartamentos e salas comerciais, com orientação em cada etapa do contrato.</dd>
+            </div>
+            <div>
+              <dt class="t-h4">Documentação e financiamento</dt>
+              <dd class="t-corpo">Apoio com a papelada e com a aprovação de crédito, inclusive Minha Casa Minha Vida.</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- 06 · Destaques -->
+      <section class="container secao" aria-labelledby="destaques-titulo">
+        <div class="cabeca-secao" style="margin-bottom: 0">
+          <h2 class="t-h2" id="destaques-titulo">Imóveis em destaque</h2>
+          <a class="link" href="imoveis.html?destaque=1">Ver todos os imóveis em destaque<span data-icone="seta-direita"></span></a>
+        </div>
+        <div id="destaques" style="margin-top: 32px"></div>
+      </section>
+
+      <!-- 07 · Bairros -->
+      <section class="fundo-secao" aria-labelledby="bairros-titulo">
+        <div class="container secao">
+          <h2 class="t-h2" id="bairros-titulo">Explore por bairro</h2>
+          <p class="t-corpo medida" style="margin-top: 8px">Veja o que está disponível agora em cada região da cidade.</p>
+          <ul class="bairros" id="bairros"></ul>
+        </div>
+      </section>
+
+      <!-- Corretores disponíveis: "Saiba mais" abre corretor.html?id=... -->
+      <section class="container secao" aria-labelledby="corretores-titulo">
+        <div class="cabeca-secao" style="margin-bottom: 0">
+          <div>
+            <h2 class="t-h2" id="corretores-titulo">Nossos corretores</h2>
+            <p class="t-corpo medida" style="margin-top: 8px">Fale direto com quem conhece o bairro e o tipo de imóvel que você procura.</p>
+          </div>
+        </div>
+        <div id="corretores"></div>
+      </section>
+
+      <!-- Avaliações de clientes (exemplos até chegarem os depoimentos reais) -->
+      <section class="fundo-secao" aria-labelledby="avaliacoes-titulo">
+        <div class="container secao">
+          <h2 class="t-h2" id="avaliacoes-titulo">O que dizem nossos clientes</h2>
+          <p class="t-pequeno com-selo" style="margin-top: 8px">Depoimentos de exemplo, para o layout <span class="a-validar">A VALIDAR</span></p>
+          <div id="avaliacoes"></div>
+        </div>
+      </section>
+
+      <!-- Últimas matérias do blog -->
+      <section class="container secao" aria-labelledby="blog-titulo">
+        <div class="cabeca-secao" style="margin-bottom: 0">
+          <h2 class="t-h2" id="blog-titulo">Notícias e dicas</h2>
+          <a class="link" href="blog.html">Ver todas as matérias<span data-icone="seta-direita"></span></a>
+        </div>
+        <div id="ultimas-materias" style="margin-top: 32px"></div>
+      </section>
+
+      <!-- 08 · Localização -->
+      <section class="container secao local" aria-labelledby="local-titulo">
+        <div>
+          <h2 class="t-h2" id="local-titulo">Venha nos visitar</h2>
+          <dl class="dados-lista" style="margin-top: 24px">
+            <div>
+              <dt class="t-rotulo">Endereço</dt>
+              <dd class="t-corpo" data-instituicao="endereco"></dd>
+            </div>
+            <div>
+              <dt class="t-rotulo">Atendimento</dt>
+              <dd class="t-corpo" data-instituicao="horario"></dd>
+            </div>
+            <div>
+              <dt class="t-rotulo">Telefone</dt>
+              <dd class="t-corpo" data-instituicao="telefone"></dd>
+            </div>
+            <div>
+              <dt class="t-rotulo">WhatsApp</dt>
+              <dd class="t-corpo" data-instituicao="whatsapp"></dd>
+            </div>
+          </dl>
+          <a class="botao botao--primario" style="margin-top: 32px" id="como-chegar" target="_blank" rel="noopener noreferrer">
+            <span data-icone="mapa"></span>Como chegar
+          </a>
+        </div>
+        <div class="mapa">
+          <iframe
+            title="Mapa de Presidente Prudente (localização do escritório a validar)"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-51.4300%2C-22.1450%2C-51.3750%2C-22.1100&amp;layer=mapnik"
+            loading="lazy"
+            tabindex="-1"
+          ></iframe>
+          <span class="a-validar">A VALIDAR</span>
+        </div>
+      </section>
+    </main>
+
+    <div id="rodape"></div>
+  </body>
+</html>

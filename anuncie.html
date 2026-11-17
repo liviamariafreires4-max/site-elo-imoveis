@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Anuncie seu imóvel | Elo Imóveis</title>
+    <meta name="description" content="Anuncie seu imóvel para venda ou locação com a Elo Imóveis em Presidente Prudente." />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/componentes.css" />
+    <link rel="stylesheet" href="css/paginas.css" />
+
+    <!-- A ordem importa: cada arquivo usa os anteriores -->
+    <script defer src="js/icones.js"></script>
+    <script defer src="js/instituicao.js"></script>
+    <script defer src="js/dados-exemplo.js"></script>
+    <script defer src="js/dados.js"></script>
+    <script defer src="js/auth.js"></script>
+    <script defer src="js/ui.js"></script>
+    <script defer src="js/validacao.js"></script>
+    <script defer src="js/formulario.js"></script>
+    <script defer src="js/paginas/anuncie.js"></script>
+  </head>
+  <body>
+    <div id="topo"></div>
+
+    <main id="conteudo" tabindex="-1">
+      <div class="container pagina">
+        <div class="form-e-lado form-e-lado--invertido" style="margin-top: 0">
+          <div>
+            <h1 class="t-h1">Anuncie seu imóvel com a Elo</h1>
+            <p class="t-lead" style="margin-top: 16px; max-width: 48ch">
+              Para vender ou alugar em Presidente Prudente e região. Preencha o formulário e um corretor entra em contato.
+            </p>
+            <ol class="lista-divisoria passos" style="margin-top: 40px">
+              <li><span class="t-h4 passos__numero numeros">1</span><div><p class="t-corpo cor-tinta negrito">Você envia os dados</p><p class="t-pequeno">Tipo, bairro e o que pretende: vender ou alugar.</p></div></li>
+              <li><span class="t-h4 passos__numero numeros">2</span><div><p class="t-corpo cor-tinta negrito">Um corretor visita o imóvel</p><p class="t-pequeno">Para avaliar, fotografar e combinar as condições do anúncio.</p></div></li>
+              <li><span class="t-h4 passos__numero numeros">3</span><div><p class="t-corpo cor-tinta negrito">O anúncio entra no site</p><p class="t-pequeno">Com código próprio, fotos e os dados conferidos com você.</p></div></li>
+            </ol>
+          </div>
+
+          <section class="caixa-borda" aria-label="Formulário de anúncio">
+            <form id="form-anuncie" class="form-grade form-grade--2">
+              <div class="campo"><label class="rotulo" for="a-nome">Nome</label><input class="entrada" id="a-nome" name="nome" required autocomplete="name" data-mascara="nome" data-validar="nome" maxlength="80" /></div>
+              <div class="campo"><label class="rotulo" for="a-tel">Telefone com DDD</label><input class="entrada" id="a-tel" name="telefone" type="tel" inputmode="tel" required autocomplete="tel" data-mascara="telefone" data-validar="telefone" maxlength="15" placeholder="(18) 99999-0000" /></div>
+              <div class="campo">
+                <label class="rotulo" for="a-final">Quero</label>
+                <select class="entrada" id="a-final" name="finalidade" required><option value="">Escolha</option><option>Vender</option><option>Alugar</option></select>
+              </div>
+              <div class="campo">
+                <label class="rotulo" for="a-tipo">Tipo de imóvel</label>
+                <select class="entrada" id="a-tipo" name="tipo" required><option value="">Escolha</option></select>
+              </div>
+              <div class="campo inteiro"><label class="rotulo" for="a-bairro">Bairro</label><input class="entrada" id="a-bairro" name="bairro" required /></div>
+              <div class="campo inteiro">
+                <label class="rotulo" for="a-msg">Detalhes do imóvel <span class="opcional">(opcional)</span></label>
+                <textarea class="entrada" id="a-msg" name="mensagem" rows="5" aria-describedby="a-msg-ajuda" data-ajuda="a-msg-ajuda"></textarea>
+                <p class="ajuda" id="a-msg-ajuda">Dormitórios, vagas, área, valor pretendido.</p>
+              </div>
+              <div class="inteiro">
+                <button type="submit" class="botao botao--primario">Enviar dados do imóvel</button>
+                <p class="ajuda">Esboço: o envio é simulado e nada sai do seu navegador.</p>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <div id="rodape"></div>
+  </body>
+</html>

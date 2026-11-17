@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sobre a Elo | Elo Imóveis</title>
+    <meta name="description" content="Conheça a Elo Imóveis, imobiliária de Presidente Prudente fundada em 2023." />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/componentes.css" />
+    <link rel="stylesheet" href="css/paginas.css" />
+
+    <!-- A ordem importa: cada arquivo usa os anteriores -->
+    <script defer src="js/icones.js"></script>
+    <script defer src="js/instituicao.js"></script>
+    <script defer src="js/dados-exemplo.js"></script>
+    <script defer src="js/dados.js"></script>
+    <script defer src="js/auth.js"></script>
+    <script defer src="js/ui.js"></script>
+    <script defer src="js/validacao.js"></script>
+    <script defer src="js/paginas/sobre.js"></script>
+  </head>
+  <body>
+    <div id="topo"></div>
+
+    <main id="conteudo" tabindex="-1">
+      <!-- Texto institucional resumido do site atual (eloimoveispp.com.br/sobre).
+           O manual (seção 12) pede revisão e aprovação da imobiliária. -->
+      <section class="container pagina duas-colunas" style="align-items: end">
+        <div class="entrada-hero">
+          <p class="t-rotulo cor-acao">O melhor elo entre você e o seu sonho</p>
+          <h1 class="t-h1" style="margin-top: 12px">Imobiliária de Presidente Prudente, fundada em 2023.</h1>
+          <p class="t-lead" style="margin-top: 24px; max-width: 56ch">
+            A Elo Imóveis foi criada por Dorival e Alan para atender quem compra, vende, aluga ou quer avaliar um imóvel na cidade e na região,
+            com atendimento próximo, transparente e consultivo.
+          </p>
+        </div>
+        <p class="t-pequeno com-selo">Texto resumido do site atual <span class="a-validar">A VALIDAR</span></p>
+      </section>
+
+      <!-- Abas da página: levam a cada parte do Sobre nós -->
+      <nav class="container abas-conta abas-sobre" aria-label="Partes da página Sobre nós">
+        <a href="#servicos">Serviços</a>
+        <a href="#informacoes-titulo">Informações da imobiliária</a>
+        <a href="#equipe-titulo">Equipe</a>
+        <a href="faq.html">Perguntas frequentes</a>
+      </nav>
+
+      <section class="container fotos-sobre" aria-label="Fotos">
+        <div><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&amp;q=70&amp;auto=format&amp;fit=crop" alt="Casa contemporânea com jardim ao entardecer" /></div>
+        <div><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=640&amp;q=70&amp;auto=format&amp;fit=crop" alt="Sala de estar iluminada" /></div>
+      </section>
+
+      <section class="container secao duas-colunas" aria-labelledby="servicos">
+        <h2 class="t-h2" id="servicos">Serviços da Elo</h2>
+        <dl class="lista-divisoria servicos">
+          <div><dt class="t-h4">Compra e venda</dt><dd class="t-corpo">Imóveis residenciais, comerciais e rurais, do primeiro contato à escritura.</dd></div>
+          <div><dt class="t-h4">Locação</dt><dd class="t-corpo">Casas, apartamentos e salas comerciais, com orientação em cada etapa do contrato.</dd></div>
+          <div><dt class="t-h4">Avaliação</dt><dd class="t-corpo">Estimativa de valor para quem quer vender ou alugar o próprio imóvel.</dd></div>
+          <div><dt class="t-h4">Documentação e financiamento</dt><dd class="t-corpo">Apoio documental e jurídico e na aprovação de crédito, inclusive Minha Casa Minha Vida.</dd></div>
+        </dl>
+      </section>
+
+      <!-- Informações da imobiliária: dados de js/instituicao.js (ou os que o
+           administrador salvou em Dados da Elo, no painel) -->
+      <section class="container secao" aria-labelledby="informacoes-titulo" style="padding-top: 0">
+        <h2 class="t-h2" id="informacoes-titulo">Informações da imobiliária</h2>
+        <div class="informacoes-grade">
+          <dl class="caixa-borda ficha-empresa">
+            <div><dt class="t-rotulo">Fundação</dt><dd class="t-corpo">2023, em Presidente Prudente, por Dorival e Alan</dd></div>
+            <div><dt class="t-rotulo">Atuação</dt><dd class="t-corpo">Imóveis residenciais, comerciais, rurais e de alto padrão em Presidente Prudente e região</dd></div>
+            <div><dt class="t-rotulo">CRECI</dt><dd class="t-corpo" data-instituicao="creci"></dd></div>
+            <div><dt class="t-rotulo">CNPJ</dt><dd class="t-corpo" data-instituicao="cnpj"></dd></div>
+          </dl>
+          <dl class="caixa-borda ficha-empresa">
+            <div><dt class="t-rotulo">Endereço</dt><dd class="t-corpo" data-instituicao="endereco"></dd></div>
+            <div><dt class="t-rotulo">Atendimento</dt><dd class="t-corpo" data-instituicao="horario"></dd></div>
+            <div><dt class="t-rotulo">Telefone</dt><dd class="t-corpo" data-instituicao="telefone"></dd></div>
+            <div><dt class="t-rotulo">WhatsApp</dt><dd class="t-corpo" data-instituicao="whatsapp"></dd></div>
+            <div><dt class="t-rotulo">E-mail</dt><dd class="t-corpo" data-instituicao="email"></dd></div>
+            <div><dt class="t-rotulo">Redes sociais</dt><dd class="t-corpo"><ul class="redes" id="redes"></ul></dd></div>
+          </dl>
+        </div>
+        <h3 class="t-h3" style="margin-top: 48px">Como trabalhamos</h3>
+        <ul class="como-trabalhamos">
+          <li><strong>Atendimento personalizado.</strong> Um corretor acompanha você da primeira visita à assinatura do contrato.</li>
+          <li><strong>Segurança jurídica.</strong> Conferimos a documentação do imóvel e das partes antes de fechar negócio.</li>
+          <li><strong>Transparência.</strong> Valores, taxas e prazos explicados antes de qualquer assinatura.</li>
+          <li><strong>Apoio no financiamento.</strong> Orientação na aprovação de crédito, inclusive Minha Casa Minha Vida.</li>
+        </ul>
+      </section>
+
+      <!-- Equipe: cada corretor aprovado entra aqui sozinho (js/paginas/sobre.js) -->
+      <section class="fundo-secao" aria-labelledby="equipe-titulo">
+        <div class="container secao">
+          <div class="cabeca-secao" style="margin-bottom: 0">
+            <div>
+              <h2 class="t-h2" id="equipe-titulo">Nossa equipe de corretores</h2>
+              <p class="t-corpo medida" style="margin-top: 8px">Cada corretor tem CRECI ativo, conferido pela administração da Elo.</p>
+            </div>
+            <a class="link" href="seja-corretor.html">É corretor? Faça parte<span data-icone="seta-direita"></span></a>
+          </div>
+          <div id="equipe"></div>
+        </div>
+      </section>
+
+      <section class="faixa-navy escuro" aria-labelledby="fale">
+        <div class="container secao faixa-navy__grade">
+          <div>
+            <h2 class="t-h2" id="fale">Fale com um corretor da Elo.</h2>
+            <p class="t-lead" style="margin-top: 16px; max-width: 52ch">Conte o que você procura ou o imóvel que quer anunciar.</p>
+            <p class="t-pequeno" style="margin-top: 16px" data-instituicao="creci"></p>
+          </div>
+          <div class="faixa-navy__acoes">
+            <a class="botao botao--claro" href="contato.html">Enviar mensagem</a>
+            <a class="botao botao--claro-contorno" href="anuncie.html">Anunciar meu imóvel</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="rodape"></div>
+  </body>
+</html>

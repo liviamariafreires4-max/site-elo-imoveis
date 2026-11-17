@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Entrar | Elo Imóveis</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/componentes.css" />
+    <link rel="stylesheet" href="css/paginas.css" />
+
+    <!-- A ordem importa: cada arquivo usa os anteriores -->
+    <script defer src="js/icones.js"></script>
+    <script defer src="js/instituicao.js"></script>
+    <script defer src="js/dados-exemplo.js"></script>
+    <script defer src="js/dados.js"></script>
+    <script defer src="js/auth.js"></script>
+    <script defer src="js/ui.js"></script>
+    <script defer src="js/validacao.js"></script>
+    <script defer src="js/paginas/entrar.js"></script>
+  </head>
+  <body>
+    <div id="topo"></div>
+
+    <main id="conteudo" tabindex="-1">
+      <div class="container pagina auth">
+        <section>
+          <h1 class="t-h1">Entrar na conta</h1>
+          <p class="t-corpo" style="margin-top: 12px">Clientes acessam os favoritos. Corretores e a administração acessam o painel.</p>
+
+          <!-- Aparece só se já houver alguém logado (js/paginas/entrar.js) -->
+          <p class="t-pequeno aviso-sessao" id="ja-logado" hidden></p>
+
+          <form id="form-entrar" novalidate>
+            <div class="campo">
+              <label class="rotulo" for="email">E-mail</label>
+              <input class="entrada" id="email" name="email" type="email" autocomplete="email" data-mascara="email" data-validar="email" maxlength="120" placeholder="nome@exemplo.com" />
+            </div>
+            <div class="campo">
+              <label class="rotulo" for="senha">Senha</label>
+              <input class="entrada" id="senha" name="senha" type="password" autocomplete="current-password" />
+            </div>
+            <button type="submit" class="botao botao--primario botao--largo">Entrar na conta</button>
+          </form>
+
+          <p class="t-corpo" style="margin-top: 24px">Ainda não tem conta? <a class="link" href="cadastro.html">Criar cadastro de cliente</a></p>
+          <p class="t-corpo" style="margin-top: 8px">É corretor? <a class="link" href="seja-corretor.html">Solicite acesso para anunciar com a Elo</a></p>
+        </section>
+
+        <!--
+          LOGIN DE DESENVOLVIMENTO
+          Entra em qualquer perfil sem senha, para testar o site.
+          TODO(backend): apagar este bloco (e signInAsDev em js/auth.js) quando o login real entrar.
+        -->
+        <aside class="caixa-dev" aria-labelledby="dev-titulo">
+          <h2 class="t-h4" id="dev-titulo">Login de desenvolvimento</h2>
+          <p class="t-pequeno" style="margin-top: 8px">Autenticação simulada: escolha um perfil para entrar sem senha. Este bloco não existe em produção.</p>
+          <ul class="perfis-dev" style="margin-top: 24px">
+            <li>
+              <p class="t-pequeno"><span class="cor-tinta negrito" style="display: block">Cliente</span>Favorita imóveis e vê a página Meus favoritos.</p>
+              <button type="button" class="botao botao--neutro botao--pequeno" data-perfil="cliente">Entrar como cliente</button>
+            </li>
+            <li>
+              <p class="t-pequeno"><span class="cor-tinta negrito" style="display: block">Corretor</span>Cadastra e edita os próprios imóveis. Não exclui.</p>
+              <button type="button" class="botao botao--neutro botao--pequeno" data-perfil="corretor">Entrar como corretor</button>
+            </li>
+            <li>
+              <p class="t-pequeno"><span class="cor-tinta negrito" style="display: block">Administrador</span>Vê tudo, exclui imóveis, gerencia corretores e clientes.</p>
+              <button type="button" class="botao botao--neutro botao--pequeno" data-perfil="admin">Entrar como administrador</button>
+            </li>
+          </ul>
+          <div class="dev-extras">
+            <label class="caixa-marcar t-pequeno"><input type="checkbox" id="simular-erro" />Simular falha de conexão (para ver os estados de erro)</label>
+            <button type="button" class="botao botao--neutro botao--pequeno" style="margin-top: 16px" id="restaurar">Restaurar dados de exemplo</button>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <div id="rodape"></div>
+  </body>
+</html>

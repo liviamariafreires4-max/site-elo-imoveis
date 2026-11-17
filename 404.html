@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Página não encontrada | Elo Imóveis</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/componentes.css" />
+    <link rel="stylesheet" href="css/paginas.css" />
+
+    <!-- A ordem importa: cada arquivo usa os anteriores -->
+    <script defer src="js/icones.js"></script>
+    <script defer src="js/instituicao.js"></script>
+    <script defer src="js/dados-exemplo.js"></script>
+    <script defer src="js/dados.js"></script>
+    <script defer src="js/auth.js"></script>
+    <script defer src="js/ui.js"></script>
+    <script defer src="js/validacao.js"></script>
+  </head>
+  <body>
+    <div id="topo"></div>
+
+    <!-- Página de erro. O 404.html tem o mesmo conteúdo: servidores (e o
+         Live Server) mostram o 404.html quando o endereço não existe. -->
+    <main id="conteudo" tabindex="-1">
+      <section class="container pagina pagina-erro" aria-labelledby="erro-titulo">
+        <p class="pagina-erro__codigo" aria-hidden="true">404</p>
+        <h1 class="t-h1" id="erro-titulo">Não encontramos esta página</h1>
+        <p class="t-lead">O endereço pode estar digitado errado, ou a página mudou de lugar. Se você estava entrando na sua conta, volte para o login e tente de novo.</p>
+        <div class="pagina-erro__acoes">
+          <a class="botao botao--primario" href="entrar.html"><span data-icone="entrar"></span>Voltar para o login</a>
+          <a class="botao botao--secundario" href="index.html">Ir para a página inicial</a>
+        </div>
+        <p class="t-pequeno" style="margin-top: 32px">
+          Procurando um imóvel? <a class="link" href="imoveis.html">Veja todos os imóveis</a> ou <a class="link" href="contato.html">fale com a Elo</a>.
+        </p>
+      </section>
+    </main>
+
+    <div id="rodape"></div>
+  </body>
+</html>

@@ -1,0 +1,1030 @@
+/* ==========================================================================
+   Elo Imóveis: PAINEL (corretor e administrador)
+   Mesmo sistema do site, em modo de trabalho: fundo suave, painéis brancos,
+   tabelas claras. No celular, cada linha da tabela vira um bloco empilhado.
+   ========================================================================== */
+
+body {
+  background: var(--surface-subtle);
+}
+
+/* ----------------------------------------------------------- cabeçalho */
+.painel__topo {
+  z-index: 40;
+  background: var(--surface-base);
+  border-bottom: 1px solid var(--border-subtle);
+}
+@media (min-width: 768px) {
+  .painel__topo {
+    position: sticky;
+    top: 0;
+  }
+}
+.painel__barra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s2) var(--s4);
+  min-height: 64px;
+  padding-block: var(--s2);
+}
+.painel__marca {
+  display: flex;
+  align-items: center;
+  gap: var(--s4);
+}
+.painel__etiqueta {
+  padding: var(--s1) var(--s2);
+  border-radius: var(--radius-sm);
+  background: var(--surface-subtle);
+  color: var(--ink);
+}
+.painel__acoes {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+}
+.painel__usuario {
+  display: none;
+  margin-right: var(--s2);
+  text-align: right;
+  line-height: 1.25;
+}
+@media (min-width: 768px) {
+  .painel__usuario {
+    display: block;
+  }
+}
+/* Menu em abas no celular e tablet */
+.painel__abas {
+  border-top: 1px solid var(--border-subtle);
+}
+.painel__abas ul {
+  /* relative: o texto escondido do contador (.sr-only) fica preso à rolagem da lista */
+  position: relative;
+  display: flex;
+  gap: var(--s1);
+  overflow-x: auto;
+  padding-block: var(--s2);
+}
+@media (min-width: 1024px) {
+  .painel__abas {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------- corpo e menu lateral */
+.painel__corpo {
+  display: flex;
+  gap: var(--s6);
+  padding-block: var(--s5) var(--s9);
+}
+@media (min-width: 768px) {
+  .painel__corpo {
+    padding-top: var(--s7);
+  }
+}
+.painel__menu {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .painel__menu {
+    display: block;
+    width: 224px;
+    flex-shrink: 0;
+  }
+  .painel__menu ul {
+    position: sticky;
+    top: 96px;
+    display: grid;
+    gap: var(--s1);
+  }
+}
+.painel__conteudo {
+  flex: 1;
+  min-width: 0;
+}
+.painel__conteudo:focus {
+  outline: none;
+}
+.item-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+  min-height: 44px;
+  padding-inline: var(--s3);
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  color: var(--text-body);
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
+.item-menu:hover {
+  background: var(--surface-base);
+  color: var(--ink);
+}
+.item-menu[aria-current="page"] {
+  background: var(--accent-red-tint);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* --------------------------------------------------------------- cabeça */
+.tela-cabeca {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--s4);
+}
+.tela-cabeca p {
+  margin-top: var(--s1);
+}
+.voltar {
+  min-height: 44px;
+  font-size: 0.875rem;
+}
+
+/* ------------------------------------------------------------- painéis */
+.caixa {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  background: var(--surface-base);
+}
+.caixa--espaco {
+  padding: var(--s4);
+}
+@media (min-width: 768px) {
+  .caixa--espaco {
+    padding: var(--s5);
+  }
+}
+.bloco + .bloco {
+  margin-top: var(--s5);
+}
+
+.filtros-painel {
+  display: grid;
+  gap: var(--s4);
+  margin-top: var(--s5);
+  padding: var(--s4);
+}
+@media (min-width: 640px) {
+  .filtros-painel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1280px) {
+  .filtros-painel {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .filtros-painel--4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* -------------------------------------------------------------- tabela
+   Desktop: tabela normal. Celular: cada linha vira um bloco. */
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+}
+.tabela caption {
+  text-align: left;
+}
+.tabela th,
+.tabela td {
+  text-align: left;
+  vertical-align: middle;
+}
+.tabela thead th {
+  padding: var(--s3);
+  border-bottom: 1px solid var(--border-subtle);
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--text-muted);
+}
+.tabela tbody tr + tr {
+  border-top: 1px solid var(--border-subtle);
+}
+.tabela tbody th,
+.tabela tbody td {
+  padding: var(--s3);
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+.tabela th:first-child,
+.tabela td:first-child {
+  padding-left: var(--s5);
+}
+.tabela th:last-child,
+.tabela td:last-child {
+  padding-right: var(--s5);
+}
+.tabela .direita {
+  text-align: right;
+}
+.tabela .numero {
+  font-variant-numeric: tabular-nums;
+}
+.rotulo-celular {
+  display: none;
+  color: var(--text-muted);
+}
+.acoes-linha {
+  display: flex;
+  gap: var(--s2);
+  justify-content: flex-end;
+}
+
+@media (max-width: 767px) {
+  .tabela,
+  .tabela tbody,
+  .tabela tr,
+  .tabela th,
+  .tabela td {
+    display: block;
+  }
+  .tabela thead {
+    display: none;
+  }
+  .tabela tbody tr {
+    padding: var(--s4);
+  }
+  .tabela tbody th,
+  .tabela tbody td,
+  .tabela th:first-child,
+  .tabela td:first-child,
+  .tabela th:last-child,
+  .tabela td:last-child {
+    padding: var(--s1) 0;
+  }
+  .tabela .direita {
+    text-align: left;
+  }
+  .rotulo-celular {
+    display: inline;
+  }
+  .acoes-linha {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: var(--s3);
+  }
+}
+/* Colunas que só aparecem em telas largas */
+@media (max-width: 1279px) and (min-width: 768px) {
+  .so-largo-tabela {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .so-largo-tabela {
+    display: block;
+  }
+}
+
+.imovel-linha {
+  display: flex;
+  align-items: center;
+  gap: var(--s4);
+}
+.miniatura {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--surface-section);
+}
+.miniatura img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.imovel-linha__titulo {
+  display: block;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--ink);
+}
+
+/* Situação do corretor */
+.situacao {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 1px solid;
+  border-radius: var(--radius-sm);
+  background: var(--surface-base);
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  white-space: nowrap;
+}
+.situacao--ativo {
+  border-color: var(--success);
+  color: var(--success);
+}
+.situacao--convidado {
+  border-color: var(--warning);
+  color: var(--warning);
+}
+.situacao--pendente {
+  border-color: var(--warning);
+  color: var(--warning);
+}
+.situacao--recusado {
+  border-color: var(--error);
+  color: var(--error);
+}
+.situacao--vendido {
+  display: inline-block;
+  margin-top: 4px;
+  border-color: var(--brand-navy);
+  color: var(--brand-navy);
+}
+.situacao--inativo {
+  border-color: var(--border-strong);
+  color: var(--text-muted);
+}
+
+/* -------------------------------------------------- formulário de imóvel */
+.secao-form {
+  padding: var(--s4);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  background: var(--surface-base);
+}
+@media (min-width: 768px) {
+  .secao-form {
+    padding: var(--s5);
+  }
+}
+.secao-form + .secao-form {
+  margin-top: var(--s5);
+}
+.secao-form > legend {
+  float: left;
+  width: 100%;
+  margin-bottom: var(--s5);
+  padding: 0;
+}
+.secao-form > legend + * {
+  clear: both;
+}
+.form-grade--5 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (min-width: 768px) {
+  .form-grade--5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+.com-prefixo {
+  position: relative;
+}
+.com-prefixo .prefixo,
+.com-prefixo .sufixo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+.com-prefixo .prefixo {
+  left: 16px;
+}
+.com-prefixo .sufixo {
+  right: 16px;
+  font-size: 0.875rem;
+}
+.com-prefixo .entrada {
+  font-variant-numeric: tabular-nums;
+}
+.com-prefixo--antes .entrada {
+  padding-left: 48px;
+}
+.com-prefixo--depois .entrada {
+  padding-right: 56px;
+}
+
+.resumo-erros {
+  padding: var(--s4);
+  border: 1px solid var(--error);
+  border-radius: var(--radius-lg);
+  background: var(--accent-red-tint);
+}
+@media (min-width: 768px) {
+  .resumo-erros {
+    padding: var(--s5);
+  }
+}
+.resumo-erros:focus {
+  outline: none;
+}
+.resumo-erros p {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+  font-weight: 600;
+  color: var(--ink);
+}
+.resumo-erros .icone {
+  color: var(--error);
+}
+.resumo-erros ul {
+  margin-top: var(--s3);
+  padding-left: 36px;
+  list-style: disc;
+  color: var(--ink);
+}
+.resumo-erros li + li {
+  margin-top: var(--s1);
+}
+
+.acoes-form {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--s3);
+  margin-top: var(--s5);
+}
+@media (min-width: 640px) {
+  .acoes-form {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+
+.codigo-caixa {
+  padding: var(--s2) var(--s3);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: var(--surface-base);
+}
+
+/* -------------------------------------------------------------- upload */
+.envio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s2);
+  min-height: 128px;
+  padding: var(--s5);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--surface-subtle);
+  text-align: center;
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease;
+}
+.envio:has(input:focus-visible) {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+.envio.arrastando {
+  border-color: var(--action-primary);
+  background: var(--accent-red-tint);
+}
+.envio.com-erro {
+  border-color: var(--error);
+  background: var(--surface-base);
+}
+.envio.cheio {
+  cursor: not-allowed;
+}
+.envio .icone {
+  color: var(--ink);
+}
+
+/* Quantas couberem com pelo menos 168px cada (1 no celular pequeno, até 4 no desktop). */
+.miniaturas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+  gap: var(--s3);
+  margin-top: var(--s2);
+}
+.miniatura-foto {
+  padding: var(--s2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--surface-base);
+}
+.miniatura-foto.arrastada {
+  opacity: 0.5;
+}
+.miniatura-foto__imagem {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--surface-section);
+  cursor: grab;
+}
+.miniatura-foto__imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+.miniatura-foto__ordem {
+  position: absolute;
+  left: var(--s2);
+  top: var(--s2);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--ink);
+  color: #ffffff;
+}
+.miniatura-foto .entrada {
+  min-height: 40px;
+  margin-top: var(--s1);
+  padding: var(--s2) var(--s3);
+  font-size: 0.875rem;
+}
+.miniatura-foto__botoes {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s1);
+  margin-top: var(--s2);
+}
+.miniatura-foto__botoes div {
+  display: flex;
+  gap: var(--s1);
+}
+
+/* Miniatura recém-enviada entra suave. */
+.miniatura-entra {
+  transition:
+    opacity 200ms var(--ease-out),
+    transform 200ms var(--ease-out);
+  @starting-style {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+/* Número de pendências ao lado do item do menu (notificações, solicitações) */
+.contador {
+  display: inline-grid;
+  place-items: center;
+  min-width: 22px;
+  height: 22px;
+  margin-left: auto;
+  padding-inline: 6px;
+  border-radius: 999px;
+  background: var(--action-primary);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.painel__abas .contador {
+  margin-left: var(--s1);
+}
+
+/* ======================================================== Solicitações */
+.lista-pedidos {
+  display: grid;
+  gap: var(--s4);
+}
+.pedido {
+  display: grid;
+  gap: var(--s4);
+}
+.pedido__cabeca {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s4);
+}
+.pedido__cabeca .avatar {
+  width: 56px;
+  height: 56px;
+  font-size: 1.125rem;
+}
+.pedido__cabeca .situacao {
+  margin-left: auto;
+}
+.pedido__dados {
+  display: grid;
+  gap: var(--s3) var(--s6);
+}
+@media (min-width: 768px) {
+  .pedido__dados {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+.pedido__dados dt {
+  color: var(--text-muted);
+}
+.pedido__dados dd {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 500;
+  word-break: break-word;
+}
+.pedido__mensagem {
+  margin: 0;
+  padding: var(--s3) var(--s4);
+  border-left: 3px solid var(--border-subtle);
+  background: var(--surface-subtle);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+/* ======================================================= Quem favoritou */
+.lista-favoritados {
+  display: grid;
+  gap: var(--s4);
+}
+.favoritado {
+  padding: var(--s4);
+}
+.favoritado__imovel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s3) var(--s4);
+}
+.favoritado__imovel > div {
+  flex: 1 1 220px;
+  min-width: 0;
+}
+.favoritado__total {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--accent-red-tint);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+.favoritado__total .icone {
+  color: var(--action-primary);
+  fill: currentColor;
+}
+.favoritado__quem {
+  margin-top: var(--s3);
+}
+.favoritado__quem summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 600;
+  color: var(--action-primary);
+  cursor: pointer;
+}
+.favoritado__quem summary:hover {
+  text-decoration: underline;
+}
+.tabela--simples {
+  margin-top: var(--s2);
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* ========================================================= Notificações */
+.lista-avisos {
+  overflow: hidden;
+  padding: 0;
+}
+.aviso {
+  display: flex;
+  gap: var(--s3);
+  padding: var(--s4) var(--s5);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.aviso:last-child {
+  border-bottom: 0;
+}
+.aviso--nova {
+  background: var(--accent-red-tint);
+}
+.aviso__icone {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--surface-base);
+  border: 1px solid var(--border-subtle);
+  color: var(--action-primary);
+}
+.aviso__nova {
+  font-weight: 700;
+  color: var(--action-primary);
+}
+
+/* =========================================================== Meu perfil */
+.perfil-foto {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s5);
+}
+.perfil-foto > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+  flex: 1 1 240px;
+}
+.perfil-foto .ajuda {
+  flex-basis: 100%;
+}
+.perfil-foto label.botao {
+  cursor: pointer;
+}
+.perfil-foto:has(input:focus-visible) label.botao {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+.perfil-form .secao-form + .secao-form {
+  margin-top: var(--s5);
+}
+
+/* =================================================== Proprietário (sigilo) */
+.secao-form--sigilo {
+  border-color: var(--warning);
+  background: #fffbf0;
+}
+.secao-form--sigilo legend {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+}
+.aviso-sigilo {
+  margin-bottom: var(--s4);
+  color: var(--warning);
+  font-weight: 500;
+}
+
+/* ============================================================ Blog (admin) */
+.capa-materia {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s3);
+}
+.capa-materia img,
+.capa-materia__vazia {
+  display: grid;
+  place-items: center;
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  background: var(--surface-section);
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+}
+.capa-materia label.botao {
+  cursor: pointer;
+}
+.capa-materia:has(input:focus-visible) label.botao {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+.item-menu__externo {
+  margin-left: auto;
+  color: var(--text-muted);
+}
+
+/* Links de vídeo no cadastro de imóvel */
+#pf-videos legend {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+}
+.lista-videos {
+  display: grid;
+  gap: var(--s3);
+  margin-bottom: var(--s4);
+}
+.lista-videos:empty {
+  margin-bottom: var(--s3);
+}
+.linha-video__campo {
+  display: flex;
+  gap: var(--s2);
+}
+.linha-video__campo .entrada {
+  flex: 1;
+  min-width: 0;
+}
+.linha-video__campo .botao {
+  flex-shrink: 0;
+  min-height: 52px;
+  min-width: 52px;
+}
+
+/* Contatos do proprietário (2 blocos) */
+.contato-dono {
+  padding-top: var(--s3);
+  border-top: 1px dashed var(--border-subtle);
+}
+.contato-dono > legend {
+  float: left;
+  width: 100%;
+  margin-bottom: var(--s2);
+  font-weight: 600;
+}
+.contato-dono .form-grade {
+  clear: both;
+}
+
+/* ================================================== Ficha do imóvel (diálogo) */
+dialog.modal--largo {
+  width: min(760px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+}
+dialog.modal--largo .modal__corpo {
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+}
+.ficha-cabeca {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s4);
+}
+.ficha-perfis {
+  margin-block: var(--s4);
+}
+.ficha-perfis label {
+  padding-inline: var(--s3);
+  text-align: center;
+}
+.ficha-conteudo h3 {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+}
+.ficha-imovel {
+  display: grid;
+  gap: var(--s3) var(--s5);
+  margin-top: var(--s3);
+}
+@media (min-width: 640px) {
+  .ficha-imovel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.ficha-imovel .inteiro {
+  grid-column: 1 / -1;
+}
+.ficha-imovel dd {
+  margin: 2px 0 0;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+.ficha-imovel--sigilo {
+  padding: var(--s4);
+  border: 1px solid var(--warning);
+  border-radius: var(--radius-md);
+  background: #fffbf0;
+}
+.sigilo-titulo .icone {
+  color: var(--warning);
+}
+.ficha-nota {
+  display: flex;
+  gap: var(--s2);
+  align-items: flex-start;
+  margin-bottom: var(--s4);
+  padding: var(--s3);
+  border-radius: var(--radius-sm);
+  background: var(--surface-section);
+}
+
+/* ============================================ Botões de cada imóvel (lista) */
+/* A faixa de botões fica logo abaixo dos dados do imóvel, na largura toda. */
+.tabela tbody tr.linha-acoes {
+  border-top: 0;
+}
+.tabela tbody tr.linha-acoes td {
+  padding-top: 0;
+  padding-bottom: var(--s4);
+}
+.acoes-imovel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s3) var(--s5);
+  padding: var(--s3) var(--s4);
+  border-radius: var(--radius-md);
+  background: var(--surface-subtle);
+}
+.acoes-imovel__grupo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2) var(--s3);
+}
+.acoes-imovel .botao {
+  white-space: nowrap;
+}
+/* A linha do imóvel fica mais legível: o título usa o espaço que sobrou. */
+.tabela .linha-imovel th {
+  min-width: 260px;
+}
+@media (max-width: 767px) {
+  .tabela tbody tr.linha-acoes {
+    padding-top: 0;
+  }
+  .acoes-imovel {
+    margin-top: var(--s2);
+    padding: var(--s3);
+  }
+  .acoes-imovel__grupo--admin {
+    width: 100%;
+    padding-top: var(--s3);
+    border-top: 1px solid var(--border-subtle);
+  }
+  .tabela .linha-imovel th {
+    min-width: 0;
+  }
+}
+
+/* =================================================== Divulgar nas redes */
+.divulgar section {
+  display: grid;
+  gap: var(--s3);
+}
+.divulgar section[hidden] {
+  display: none;
+}
+.imagens-post {
+  display: flex;
+  gap: var(--s2);
+  overflow-x: auto;
+  padding-bottom: var(--s2);
+}
+.imagens-post img {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+}
+.imagens-post img:first-child {
+  outline: 2px solid var(--action-primary);
+  outline-offset: 2px;
+}
+.texto-post {
+  font-size: 0.9375rem;
+  line-height: 1.5rem;
+}
+.acoes-post {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s3);
+}
+.campos-marketplace {
+  display: grid;
+  gap: var(--s3);
+}
+.campos-marketplace dd {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--s3);
+  margin: 4px 0 0;
+}
+.valor-campo {
+  flex: 1;
+  min-width: 0;
+  padding: var(--s2) var(--s3);
+  border-radius: var(--radius-sm);
+  background: var(--surface-subtle);
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+.valor-campo--longo {
+  max-height: 180px;
+  overflow-y: auto;
+  white-space: pre-line;
+}
+
+/* Abas da Ficha e do Divulgar: cabem em telas estreitas */
+.ficha-perfis {
+  grid-auto-columns: minmax(0, 1fr);
+}
+@media (max-width: 480px) {
+  .ficha-perfis label {
+    padding-inline: var(--s1);
+    font-size: 0.8125rem;
+  }
+}

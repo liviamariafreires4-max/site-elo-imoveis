@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Política de Privacidade | Elo Imóveis</title>
+    <meta name="description" content="Como a Elo Imóveis coleta, usa, guarda e protege os seus dados pessoais, de acordo com a LGPD." />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/componentes.css" />
+    <link rel="stylesheet" href="css/paginas.css" />
+
+    <!-- A ordem importa: cada arquivo usa os anteriores -->
+    <script defer src="js/icones.js"></script>
+    <script defer src="js/instituicao.js"></script>
+    <script defer src="js/dados-exemplo.js"></script>
+    <script defer src="js/dados.js"></script>
+    <script defer src="js/auth.js"></script>
+    <script defer src="js/ui.js"></script>
+    <script defer src="js/validacao.js"></script>
+  </head>
+  <body>
+    <div id="topo"></div>
+
+    <!--
+      POLÍTICA DE PRIVACIDADE (LGPD, Lei 13.709/2018)
+      Texto-base escrito para o esboço. ANTES DE PUBLICAR, peça a revisão de um
+      advogado e confirme os itens marcados com "A VALIDAR".
+      E-mail, telefone, endereço, CNPJ e CRECI vêm de js/instituicao.js (ou dos
+      dados que o administrador salvou em Dados da Elo): mudam aqui sozinhos.
+      O link desta página e o da seção #exclusao-de-dados são os que vão no app
+      da Meta (veja REDES-SOCIAIS.md, etapa 3.4).
+    -->
+    <main id="conteudo" tabindex="-1">
+      <article class="container pagina documento-legal">
+        <header>
+          <h1 class="t-h1">Política de Privacidade</h1>
+          <p class="t-pequeno cor-suave" style="margin-top: 12px">Última atualização: 17 de novembro de 2026</p>
+          <p class="t-pequeno com-selo" style="margin-top: 8px">Texto-base, precisa de revisão jurídica antes de publicar <span class="a-validar">A VALIDAR</span></p>
+        </header>
+
+        <nav class="sumario" aria-labelledby="sumario-titulo">
+          <h2 class="t-h4" id="sumario-titulo">Nesta página</h2>
+          <ol>
+            <li><a class="link" href="#quem-somos">Quem cuida dos seus dados</a></li>
+            <li><a class="link" href="#dados-coletados">Quais dados coletamos</a></li>
+            <li><a class="link" href="#finalidades">Para que usamos</a></li>
+            <li><a class="link" href="#compartilhamento">Com quem compartilhamos</a></li>
+            <li><a class="link" href="#redes-sociais">Redes sociais (Facebook e Instagram)</a></li>
+            <li><a class="link" href="#armazenamento">Onde guardamos e por quanto tempo</a></li>
+            <li><a class="link" href="#cookies">Cookies e armazenamento no navegador</a></li>
+            <li><a class="link" href="#seguranca">Segurança</a></li>
+            <li><a class="link" href="#direitos">Seus direitos</a></li>
+            <li><a class="link" href="#exclusao-de-dados">Como pedir a exclusão dos seus dados</a></li>
+            <li><a class="link" href="#criancas">Crianças e adolescentes</a></li>
+            <li><a class="link" href="#mudancas">Mudanças nesta política</a></li>
+            <li><a class="link" href="#contato">Contato</a></li>
+          </ol>
+        </nav>
+
+        <p class="t-lead">
+          A Elo Imóveis respeita a sua privacidade. Esta página explica, em linguagem simples, quais dados pessoais coletamos no site e no
+          atendimento, por que coletamos, com quem compartilhamos e como você pode exercer os seus direitos, conforme a Lei Geral de Proteção de
+          Dados Pessoais (LGPD, Lei nº 13.709/2018).
+        </p>
+
+        <section aria-labelledby="quem-somos">
+          <h2 class="t-h3" id="quem-somos">1. Quem cuida dos seus dados</h2>
+          <p>
+            A responsável pelos seus dados (a <strong>controladora</strong>, nos termos da LGPD) é a <strong>Elo Imóveis</strong>, imobiliária de
+            Presidente Prudente/SP.
+          </p>
+          <dl class="ficha-legal">
+            <div><dt>CNPJ</dt><dd data-instituicao="cnpj"></dd></div>
+            <div><dt>Registro</dt><dd data-instituicao="creci"></dd></div>
+            <div><dt>Endereço</dt><dd data-instituicao="endereco"></dd></div>
+            <div><dt>E-mail para assuntos de privacidade</dt><dd data-instituicao="email"></dd></div>
+            <div>
+              <dt>Encarregado pelo tratamento de dados (DPO)</dt>
+              <dd class="com-selo"><span>Nome do responsável na Elo</span><span class="a-validar">A VALIDAR</span></dd>
+            </div>
+          </dl>
+        </section>
+
+        <section aria-labelledby="dados-coletados">
+          <h2 class="t-h3" id="dados-coletados">2. Quais dados coletamos</h2>
+          <p>Coletamos só o necessário para cada situação:</p>
+          <div class="tabela-legal" role="region" aria-label="Dados coletados em cada situação" tabindex="0">
+            <table>
+              <thead>
+                <tr><th scope="col">Quando</th><th scope="col">Dados</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Cadastro de cliente</th><td>Nome, e-mail, telefone (opcional) e senha</td></tr>
+                <tr><th scope="row">Uso da conta</th><td>Imóveis que você salva nos favoritos e as avaliações que você envia</td></tr>
+                <tr><th scope="row">Formulários (contato, agendar visita, anunciar imóvel)</th><td>Nome, telefone, e-mail, mensagem e os dados do imóvel que você informar</td></tr>
+                <tr><th scope="row">Newsletter</th><td>E-mail</td></tr>
+                <tr><th scope="row">Pedido para ser corretor parceiro</th><td>Nome, e-mail, telefone, número do CRECI e mensagem</td></tr>
+                <tr><th scope="row">Perfil público do corretor</th><td>Nome, foto, CRECI, telefone, WhatsApp e apresentação que o próprio corretor preenche</td></tr>
+                <tr><th scope="row">Proprietários de imóveis anunciados</th><td>Nome, CPF ou CNPJ, e-mail, telefones de contato e endereço do imóvel</td></tr>
+                <tr><th scope="row">Navegação no site</th><td>Informações técnicas do navegador e preferências guardadas no seu aparelho (veja a seção 7)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            Os dados dos <strong>proprietários</strong> (inclusive o endereço completo do imóvel) são <strong>sigilosos</strong>: nunca aparecem no
+            site e só podem ser vistos pelo corretor responsável pelo imóvel e pela administração da Elo.
+          </p>
+        </section>
+
+        <section aria-labelledby="finalidades">
+          <h2 class="t-h3" id="finalidades">3. Para que usamos os seus dados</h2>
+          <ul>
+            <li><strong>Atender você:</strong> responder mensagens, agendar visitas, apresentar imóveis e conduzir a negociação (base legal: procedimentos preliminares e execução de contrato, art. 7º, V, da LGPD).</li>
+            <li><strong>Manter a sua conta:</strong> guardar favoritos, permitir a atualização dos seus dados e a avaliação do atendimento (execução de contrato).</li>
+            <li><strong>Avisar o corretor:</strong> quando você salva um imóvel nos favoritos, o corretor responsável e a administração são avisados, para poderem ajudar no seu interesse pelo imóvel (legítimo interesse, art. 7º, IX).</li>
+            <li><strong>Enviar a newsletter:</strong> só se você se inscrever, e você pode cancelar quando quiser (consentimento, art. 7º, I).</li>
+            <li><strong>Publicar avaliações:</strong> com o seu nome abreviado ou como "Cliente anônimo", conforme a sua escolha (consentimento).</li>
+            <li><strong>Anunciar imóveis:</strong> usar os dados do proprietário para captar, anunciar e intermediar o imóvel (execução de contrato).</li>
+            <li><strong>Cumprir obrigações legais:</strong> guardar registros exigidos pela lei e pelo CRECI e responder a autoridades (cumprimento de obrigação legal, art. 7º, II).</li>
+            <li><strong>Segurança:</strong> evitar fraudes e acessos indevidos à área de corretores e à administração (legítimo interesse).</li>
+          </ul>
+          <p>Não vendemos os seus dados e não os usamos para nenhuma finalidade diferente das listadas aqui.</p>
+        </section>
+
+        <section aria-labelledby="compartilhamento">
+          <h2 class="t-h3" id="compartilhamento">4. Com quem compartilhamos</h2>
+          <p>Compartilhamos dados só quando necessário e com quem também tem o dever de protegê-los:</p>
+          <ul>
+            <li><strong>Corretores da Elo:</strong> o corretor responsável pelo imóvel que você procurou ou salvou.</li>
+            <li><strong>Partes da negociação:</strong> quando você fecha negócio, os dados necessários vão para cartórios, bancos e financiadoras (por exemplo, a Caixa) e para a outra parte do contrato.</li>
+            <li><strong>Prestadores de tecnologia:</strong> empresas que hospedam o site e o banco de dados e enviam e-mails, que só tratam os dados seguindo as nossas instruções.</li>
+            <li><strong>Serviços de terceiros no site:</strong> ao abrir o mapa (OpenStreetMap), um vídeo de imóvel (YouTube ou Vimeo), as fontes do site (Google Fonts) ou o botão do WhatsApp, o seu navegador se conecta diretamente a esses serviços, que têm as próprias políticas de privacidade.</li>
+            <li><strong>Autoridades:</strong> quando a lei ou uma ordem judicial exigir.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="redes-sociais">
+          <h2 class="t-h3" id="redes-sociais">5. Redes sociais (Facebook e Instagram)</h2>
+          <p>
+            A Elo usa um aplicativo da Meta ("Elo Imóveis – Publicador") <strong>apenas para publicar os anúncios dos imóveis</strong> na Página
+            do Facebook e no perfil do Instagram da própria Elo.
+          </p>
+          <ul>
+            <li>O aplicativo <strong>não coleta</strong> dados dos visitantes do site nem dos seguidores das redes sociais.</li>
+            <li>As publicações trazem só dados do <strong>imóvel</strong> (fotos, preço, bairro, cidade e características) e os contatos públicos da Elo e do corretor. Nunca levam dados de proprietários nem o endereço do imóvel.</li>
+            <li>Quando você interage com os nossos posts (curtir, comentar, enviar mensagem), essas informações ficam com a Meta, conforme a política de privacidade dela.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="armazenamento">
+          <h2 class="t-h3" id="armazenamento">6. Onde guardamos e por quanto tempo</h2>
+          <p>
+            Os dados ficam em serviços de hospedagem com controle de acesso por perfil (cliente, corretor e administração).
+            <span class="com-selo"><span>Os servidores podem estar fora do Brasil; nesse caso, seguimos as regras da LGPD para transferência internacional.</span><span class="a-validar">A VALIDAR</span></span>
+          </p>
+          <ul>
+            <li><strong>Conta de cliente:</strong> enquanto a conta existir. Se você pedir a exclusão, apagamos em até 15 dias, salvo o que a lei obrigar a guardar.</li>
+            <li><strong>Mensagens e agendamentos:</strong> pelo tempo do atendimento e por até 2 anos depois, para histórico e defesa em eventual reclamação.</li>
+            <li><strong>Documentos de negócios fechados:</strong> pelo prazo exigido pela legislação fiscal, civil e do CRECI.</li>
+            <li><strong>Newsletter:</strong> até você cancelar a inscrição.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="cookies">
+          <h2 class="t-h3" id="cookies">7. Cookies e armazenamento no navegador</h2>
+          <p>
+            O site guarda no seu navegador (armazenamento local) só o necessário para funcionar: a sessão da sua conta, para você continuar
+            logado, e preferências como os imóveis salvos. <strong>Não usamos cookies de publicidade nem de rastreamento.</strong>
+          </p>
+          <p>Você pode apagar esses dados a qualquer momento nas configurações do seu navegador. Isso encerra a sua sessão no site.</p>
+          <p class="t-pequeno">
+            <span>Se no futuro o site usar ferramentas de estatística ou anúncios, esta seção será atualizada e pediremos o seu consentimento antes.</span>
+          </p>
+        </section>
+
+        <section aria-labelledby="seguranca">
+          <h2 class="t-h3" id="seguranca">8. Segurança</h2>
+          <p>
+            Usamos conexão criptografada (HTTPS), senhas protegidas, acesso por perfil e registro das ações sensíveis, como a retirada de imóveis do
+            site. Os dados de proprietários ficam separados dos anúncios e só são lidos pela equipe autorizada. Nenhum sistema é 100% seguro: se
+            houver um incidente que possa trazer risco a você, avisaremos você e a Autoridade Nacional de Proteção de Dados (ANPD), como manda a lei.
+          </p>
+        </section>
+
+        <section aria-labelledby="direitos">
+          <h2 class="t-h3" id="direitos">9. Seus direitos</h2>
+          <p>Pela LGPD (art. 18), você pode pedir a qualquer momento:</p>
+          <ul class="lista-direitos">
+            <li>Confirmação de que tratamos os seus dados e acesso a eles;</li>
+            <li>Correção de dados incompletos, errados ou desatualizados. Na sua conta, você mesmo pode fazer isso em <a class="link" href="minha-conta.html">Minha conta</a>;</li>
+            <li>Anonimização, bloqueio ou eliminação de dados desnecessários ou tratados fora da lei;</li>
+            <li>Portabilidade dos dados a outro fornecedor;</li>
+            <li>Eliminação dos dados tratados com o seu consentimento;</li>
+            <li>Informação sobre com quem compartilhamos os seus dados;</li>
+            <li>Informação sobre a possibilidade de não dar consentimento e o que isso muda;</li>
+            <li>Revogação do consentimento (por exemplo, sair da newsletter ou tornar a sua avaliação anônima).</li>
+          </ul>
+          <p>Respondemos em até 15 dias. Você também pode reclamar à ANPD (gov.br/anpd).</p>
+        </section>
+
+        <section aria-labelledby="exclusao-de-dados" class="destaque-legal">
+          <h2 class="t-h3" id="exclusao-de-dados">10. Como pedir a exclusão dos seus dados</h2>
+          <p>Para apagar a sua conta e os seus dados pessoais:</p>
+          <ol>
+            <li>Envie um e-mail para <span data-instituicao="email"></span> com o assunto <strong>"Excluir meus dados"</strong>.</li>
+            <li>Escreva o nome e o e-mail usados no cadastro (ou o telefone usado no atendimento).</li>
+            <li>Podemos pedir uma confirmação para ter certeza de que o pedido é seu.</li>
+            <li>Em até <strong>15 dias</strong>, confirmamos a exclusão por e-mail. Só fica guardado o que a lei obrigar (por exemplo, documentos de um negócio fechado).</li>
+          </ol>
+          <p>
+            Também é possível pedir pelo WhatsApp: <span data-instituicao="whatsapp"></span>. Este procedimento vale também para quem interagiu com a
+            Elo pelo Facebook ou pelo Instagram.
+          </p>
+        </section>
+
+        <section aria-labelledby="criancas">
+          <h2 class="t-h3" id="criancas">11. Crianças e adolescentes</h2>
+          <p>O site e os serviços da Elo são voltados a maiores de 18 anos. Não coletamos dados de menores de idade de propósito.</p>
+        </section>
+
+        <section aria-labelledby="mudancas">
+          <h2 class="t-h3" id="mudancas">12. Mudanças nesta política</h2>
+          <p>
+            Podemos atualizar esta política quando o site ou a lei mudarem. A data da última atualização fica no topo da página. Mudanças importantes
+            serão avisadas no site ou por e-mail para quem tem cadastro.
+          </p>
+        </section>
+
+        <section aria-labelledby="contato">
+          <h2 class="t-h3" id="contato">13. Contato</h2>
+          <p>Dúvidas sobre privacidade ou sobre os seus dados:</p>
+          <dl class="ficha-legal">
+            <div><dt>E-mail</dt><dd data-instituicao="email"></dd></div>
+            <div><dt>Telefone</dt><dd data-instituicao="telefone"></dd></div>
+            <div><dt>WhatsApp</dt><dd data-instituicao="whatsapp"></dd></div>
+            <div><dt>Endereço</dt><dd data-instituicao="endereco"></dd></div>
+          </dl>
+        </section>
+      </article>
+    </main>
+
+    <div id="rodape"></div>
+  </body>
+</html>

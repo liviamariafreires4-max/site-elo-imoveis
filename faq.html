@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Perguntas frequentes | Elo Imóveis</title>
+    <meta name="description" content="Respostas para as dúvidas mais comuns de quem compra, aluga ou anuncia imóvel com a Elo Imóveis." />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/componentes.css" />
+    <link rel="stylesheet" href="css/paginas.css" />
+
+    <!-- A ordem importa: cada arquivo usa os anteriores -->
+    <script defer src="js/icones.js"></script>
+    <script defer src="js/instituicao.js"></script>
+    <script defer src="js/dados-exemplo.js"></script>
+    <script defer src="js/dados.js"></script>
+    <script defer src="js/auth.js"></script>
+    <script defer src="js/ui.js"></script>
+    <script defer src="js/validacao.js"></script>
+  </head>
+  <body>
+    <div id="topo"></div>
+
+    <main id="conteudo" tabindex="-1">
+      <div class="container pagina faq">
+        <h1 class="t-h1 entrada-hero">Perguntas frequentes</h1>
+        <p class="t-lead" style="margin-top: 16px; max-width: 60ch">As dúvidas mais comuns de quem compra, aluga ou anuncia com a Elo. Não achou a sua? Fale com a gente.</p>
+        <p class="t-pequeno com-selo" style="margin-top: 16px">Perguntas e respostas genéricas, para revisar <span class="a-validar">A VALIDAR</span></p>
+
+        <!--
+          PARA EDITAR: cada pergunta é um <details>. Copie um bloco inteiro
+          (de <details> até </details>) para acrescentar outra.
+        -->
+        <section class="faq__grupo" aria-labelledby="faq-comprar">
+          <h2 class="t-h3" id="faq-comprar">Comprar</h2>
+          <details>
+            <summary>Como agendo uma visita a um imóvel?</summary>
+            <p>Na página do imóvel, use o formulário “Agendar visita” ou o botão do WhatsApp. Um corretor confirma o dia e o horário com você.</p>
+          </details>
+          <details>
+            <summary>Quais documentos preciso para comprar?</summary>
+            <p>Em geral, RG, CPF, comprovante de residência, certidão de estado civil e, se for financiar, comprovante de renda. Veja a lista completa no nosso blog.</p>
+          </details>
+          <details>
+            <summary>A Elo ajuda com o financiamento?</summary>
+            <p>Sim. Orientamos na simulação, na documentação e na aprovação do crédito, inclusive pelo Minha Casa Minha Vida.</p>
+          </details>
+          <details>
+            <summary>Quais custos existem além do preço do imóvel?</summary>
+            <p>Normalmente ITBI, escritura (quando não há financiamento) e registro no cartório. O corretor apresenta uma estimativa antes da proposta.</p>
+          </details>
+        </section>
+
+        <section class="faq__grupo" aria-labelledby="faq-alugar">
+          <h2 class="t-h3" id="faq-alugar">Alugar</h2>
+          <details>
+            <summary>Quais garantias são aceitas no aluguel?</summary>
+            <p>Depende do imóvel e do proprietário. As mais comuns são fiador, seguro-fiança e caução. Pergunte ao corretor quais valem para o imóvel que você escolheu.</p>
+          </details>
+          <details>
+            <summary>Como funciona a vistoria?</summary>
+            <p>Antes da entrega das chaves fazemos a vistoria de entrada, com fotos de cada ambiente. Ela é comparada com a vistoria de saída no fim do contrato.</p>
+          </details>
+          <details>
+            <summary>O valor do aluguel é reajustado?</summary>
+            <p>Sim, uma vez por ano, pelo índice combinado no contrato (como IGP-M ou IPCA).</p>
+          </details>
+        </section>
+
+        <section class="faq__grupo" aria-labelledby="faq-anunciar">
+          <h2 class="t-h3" id="faq-anunciar">Anunciar meu imóvel</h2>
+          <details>
+            <summary>Como anuncio meu imóvel com a Elo?</summary>
+            <p>Preencha o formulário em “Cadastre seu imóvel”. Um corretor entra em contato para conhecer o imóvel, avaliar o valor e combinar as fotos.</p>
+          </details>
+          <details>
+            <summary>A avaliação do imóvel é cobrada?</summary>
+            <p>Fale com a nossa equipe: as condições dependem do tipo de imóvel e do serviço que você precisa.</p>
+          </details>
+          <details>
+            <summary>Sou corretor. Posso anunciar pela Elo?</summary>
+            <p>Sim. Solicite acesso em “Seja um corretor parceiro”. Depois da aprovação, você cadastra seus imóveis pelo painel.</p>
+          </details>
+        </section>
+
+        <section class="faq__grupo" aria-labelledby="faq-conta">
+          <h2 class="t-h3" id="faq-conta">Conta no site</h2>
+          <details>
+            <summary>Para que serve o cadastro no site?</summary>
+            <p>Com o cadastro você salva imóveis nos favoritos e atualiza seus dados em Minha conta. Depois de fechar negócio com a Elo, também pode avaliar o atendimento.</p>
+          </details>
+          <details>
+            <summary>Minha avaliação pode ser anônima?</summary>
+            <p>Sim. Ao avaliar, você escolhe se aparece com o seu nome ou como “Cliente anônimo”.</p>
+          </details>
+          <details>
+            <summary>Como altero meus dados?</summary>
+            <p>Entre na sua conta e abra “Minha conta”. Lá você muda nome, e-mail e telefone.</p>
+          </details>
+        </section>
+
+        <div class="caixa-borda faq__fim">
+          <p class="t-corpo">Ainda com dúvida? Nossa equipe responde.</p>
+          <a class="botao botao--primario" href="contato.html">Falar com a Elo</a>
+        </div>
+      </div>
+    </main>
+
+    <div id="rodape"></div>
+  </body>
+</html>

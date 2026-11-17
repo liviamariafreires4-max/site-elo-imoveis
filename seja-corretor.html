@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Seja um corretor parceiro | Elo Imóveis</title>
+    <meta name="description" content="Corretor com CRECI ativo: solicite acesso para anunciar seus imóveis no site da Elo Imóveis." />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/componentes.css" />
+    <link rel="stylesheet" href="css/paginas.css" />
+
+    <!-- A ordem importa: cada arquivo usa os anteriores -->
+    <script defer src="js/icones.js"></script>
+    <script defer src="js/instituicao.js"></script>
+    <script defer src="js/dados-exemplo.js"></script>
+    <script defer src="js/dados.js"></script>
+    <script defer src="js/auth.js"></script>
+    <script defer src="js/ui.js"></script>
+    <script defer src="js/validacao.js"></script>
+    <script defer src="js/paginas/seja-corretor.js"></script>
+  </head>
+  <body>
+    <div id="topo"></div>
+
+    <main id="conteudo" tabindex="-1">
+      <div class="container pagina auth">
+        <section id="area-form">
+          <h1 class="t-h1">Seja um corretor parceiro</h1>
+          <p class="t-corpo" style="margin-top: 12px">
+            Envie seus dados. A administração da Elo confere o seu CRECI e, quando aprovar, você entra no painel para cadastrar seus imóveis.
+          </p>
+
+          <form id="form-corretor" novalidate>
+            <div class="campo">
+              <label class="rotulo" for="nome">Nome completo</label>
+              <input class="entrada" id="nome" name="nome" autocomplete="name" placeholder="Ex.: Maria da Silva" data-mascara="nome" data-validar="nome" maxlength="80" />
+            </div>
+            <div class="campo">
+              <label class="rotulo" for="email">E-mail</label>
+              <input class="entrada" id="email" name="email" type="email" autocomplete="email" data-mascara="email" data-validar="email" maxlength="120" placeholder="nome@exemplo.com" />
+            </div>
+            <div class="campo">
+              <label class="rotulo" for="telefone">Telefone com DDD</label>
+              <input class="entrada" id="telefone" name="telefone" type="tel" inputmode="tel" autocomplete="tel" data-mascara="telefone" data-validar="telefone" maxlength="15" placeholder="(18) 99999-0000" />
+            </div>
+            <div class="campo">
+              <label class="rotulo" for="creci">Número do CRECI</label>
+              <input class="entrada" id="creci" name="creci" autocomplete="off" data-mascara="creci" data-validar="creci" maxlength="16" placeholder="Ex.: 123456-F" aria-describedby="creci-ajuda" data-ajuda="creci-ajuda" />
+              <p class="ajuda" id="creci-ajuda">A administração confere o registro no site do CRECI-SP antes de aprovar.</p>
+            </div>
+            <div class="campo">
+              <label class="rotulo" for="mensagem">Conte sobre o seu trabalho <span class="opcional">(opcional)</span></label>
+              <textarea class="entrada" id="mensagem" name="mensagem" rows="4"></textarea>
+            </div>
+            <div class="campo">
+              <label class="rotulo" for="senha">Crie uma senha</label>
+              <input class="entrada" id="senha" name="senha" type="password" autocomplete="new-password" aria-describedby="senha-ajuda" data-ajuda="senha-ajuda" />
+              <p class="ajuda" id="senha-ajuda">Pelo menos 8 caracteres, com letras e números. Você usa esta senha depois da aprovação.</p>
+            </div>
+            <p class="t-pequeno aviso-privacidade">Ao continuar, você concorda com a <a class="link" href="privacidade.html">Política de Privacidade</a> da Elo Imóveis.</p>
+            <button type="submit" class="botao botao--primario botao--largo">Enviar solicitação</button>
+          </form>
+
+          <p class="t-corpo" style="margin-top: 24px">Já foi aprovado? <a class="link" href="entrar.html">Entrar na conta</a></p>
+        </section>
+
+        <aside class="caixa-borda">
+          <h2 class="t-h4">Como funciona</h2>
+          <ol class="passos-lista t-corpo">
+            <li>Você envia esta solicitação.</li>
+            <li>A administração confere seus dados e o CRECI.</li>
+            <li>Aprovado, você entra com seu e-mail e senha e já pode cadastrar imóveis.</li>
+          </ol>
+          <p class="t-pequeno" style="margin-top: 16px">
+            Esboço: a solicitação fica guardada só neste navegador e a senha não é armazenada. Não use uma senha verdadeira.
+          </p>
+        </aside>
+      </div>
+    </main>
+
+    <div id="rodape"></div>
+  </body>
+</html>

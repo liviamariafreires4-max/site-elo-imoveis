@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contato | Elo Imóveis</title>
+    <meta name="description" content="Fale com a Elo Imóveis em Presidente Prudente." />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/componentes.css" />
+    <link rel="stylesheet" href="css/paginas.css" />
+
+    <!-- A ordem importa: cada arquivo usa os anteriores -->
+    <script defer src="js/icones.js"></script>
+    <script defer src="js/instituicao.js"></script>
+    <script defer src="js/dados-exemplo.js"></script>
+    <script defer src="js/dados.js"></script>
+    <script defer src="js/auth.js"></script>
+    <script defer src="js/ui.js"></script>
+    <script defer src="js/validacao.js"></script>
+    <script defer src="js/formulario.js"></script>
+    <script defer src="js/paginas/contato.js"></script>
+  </head>
+  <body>
+    <div id="topo"></div>
+
+    <main id="conteudo" tabindex="-1">
+      <div class="container pagina">
+        <h1 class="t-h1">Contato com a Elo Imóveis</h1>
+        <p class="t-lead" style="margin-top: 16px; max-width: 56ch">Envie sua mensagem e um corretor responde pelo contato que você informar.</p>
+
+        <div class="form-e-lado">
+          <section aria-label="Formulário de contato">
+            <form id="form-contato" class="form-grade form-grade--2">
+              <div class="campo"><label class="rotulo" for="c-nome">Nome</label><input class="entrada" id="c-nome" name="nome" required autocomplete="name" data-mascara="nome" data-validar="nome" maxlength="80" /></div>
+              <div class="campo"><label class="rotulo" for="c-tel">Telefone com DDD</label><input class="entrada" id="c-tel" name="telefone" type="tel" inputmode="tel" required autocomplete="tel" data-mascara="telefone" data-validar="telefone" maxlength="15" placeholder="(18) 99999-0000" /></div>
+              <div class="campo inteiro"><label class="rotulo" for="c-email">E-mail <span class="opcional">(opcional)</span></label><input class="entrada" id="c-email" name="email" type="email" autocomplete="email" data-mascara="email" data-validar="email" maxlength="120" placeholder="nome@exemplo.com" /></div>
+              <div class="campo inteiro">
+                <label class="rotulo" for="c-assunto">Assunto</label>
+                <select class="entrada" id="c-assunto" name="assunto" required>
+                  <option value="">Escolha</option>
+                  <option>Quero comprar</option>
+                  <option>Quero alugar</option>
+                  <option>Quero anunciar meu imóvel</option>
+                  <option>Outro assunto</option>
+                </select>
+              </div>
+              <div class="campo inteiro"><label class="rotulo" for="c-msg">Mensagem</label><textarea class="entrada" id="c-msg" name="mensagem" rows="5" required></textarea></div>
+              <div class="inteiro">
+                <button type="submit" class="botao botao--primario">Enviar mensagem</button>
+                <p class="ajuda">Esboço: o envio é simulado e nada sai do seu navegador.</p>
+              </div>
+            </form>
+          </section>
+
+          <aside aria-label="Dados de contato">
+            <dl class="lista-divisoria">
+              <div><dt class="t-rotulo">Endereço</dt><dd class="t-corpo" data-instituicao="endereco"></dd></div>
+              <div><dt class="t-rotulo">Telefone</dt><dd class="t-corpo" data-instituicao="telefone"></dd></div>
+              <div><dt class="t-rotulo">WhatsApp</dt><dd class="t-corpo" data-instituicao="whatsapp"></dd></div>
+              <div><dt class="t-rotulo">E-mail</dt><dd class="t-corpo" data-instituicao="email"></dd></div>
+              <div><dt class="t-rotulo">Atendimento</dt><dd class="t-corpo" data-instituicao="horario"></dd></div>
+            </dl>
+            <a class="botao botao--secundario" style="margin-top: 24px" id="como-chegar" target="_blank" rel="noopener noreferrer"><span data-icone="mapa"></span>Como chegar</a>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <div id="rodape"></div>
+  </body>
+</html>

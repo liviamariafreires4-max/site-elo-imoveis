@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-11-13T18:20:38.953Z",
+        "reason": "Brand manual (Manual_Identidade_Visual_Elo_Imoveis_2026.docx, seção 04) prescribes Inter for body text; the user set the manual as the source of truth"
+      }
+    ]
+  }
+}
